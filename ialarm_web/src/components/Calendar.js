@@ -5,6 +5,7 @@ import 'dayjs/locale/es';
 import { CheckOutlined, EditOutlined, ExclamationOutlined} from '@ant-design/icons'; // Importa íconos
 import "./Calendar.css";
 import es_ES from 'antd/es/locale/es_ES'; // Importa la localización en español
+import CustomSwitch from './CustomSwitch';
 
 dayjs.locale("es"); 
 

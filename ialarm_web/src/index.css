@@ -1,6 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+body{
+    margin: 0 !important;
+}
+
 *{
     font-family: 'Roboto Flex', sans-serif !important;
+    box-sizing: border-box;
 }
