@@ -1,0 +1,105 @@
+.events {
+    margin: 0;  
+    padding: 0;
+    list-style: none;
+}
+
+.events .ant-badge-status {
+    width: 100%;
+    overflow: hidden;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.notes-month {
+    font-size: 28px;
+    text-align: center;
+}
+
+.notes-month section {
+    font-size: 28px;
+}
+
+.ant-badge-status-text{
+    font-family: 'Roboto Flex', sans-serif !important;
+    line-height: 1;
+}
+
+.event-warning {
+    background-color: #D9F0FF !important;
+    color: #2E4057;
+}
+
+.event-success {
+    background-color: #2E4057;
+    color: white;
+}
+
+
+.event-error {
+    background-color: #EF2D56;
+    color: white;
+    
+    /* line-height: 1; */
+
+}
+
+
+.events{
+    padding: 0;
+}
+
+.event-error, .event-success, .event-warning{
+    font-family: "Roboto Flex", sans-serif;
+    padding: 0.1em 0.7em;
+
+}
+
+.item-event{
+    white-space: nowrap;
+    overflow: hidden;    
+    text-overflow: ellipsis; 
+    width: 100%;
+    display: inline-block; 
+}
+
+.event-warning .item-event{
+    text-decoration: line-through;
+}
+
+.ant-picker-calendar-mode-switch{
+    display: none;
+}
+
+.ant-select-selector, .ant-select-item-option-active, .ant-select-outline{
+    border-radius: 0 !important;
+    border: 1px solid #2E4057 !important;
+    font-family: "Roboto Flex", sans-serif;
+    box-shadow: none !important;
+}
+
+.ant-select-open{
+    box-shadow: none;
+    border: 0;
+
+}
+
+.ant-select-dropdown{
+    border-radius: 0;
+}
+
+.ant-select-item-option-selected{
+    background-color: white !important;
+    border-radius: 0 !important;
+}
+
+.ant-select-item-option-active{
+    background-color: #2E4057 !important;
+    color: white !important;
+    border-radius: 0 !important;
+}
+
+.ant-picker-calendar-date-today{
+    border-color: #2E4057 !important;
+}
