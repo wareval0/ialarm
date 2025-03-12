@@ -15,30 +15,35 @@ const eventIcons = {
     error: <ExclamationOutlined style={{ color: 'white' }} />
 };
 
-const getListData = (value) => {
+const getListData = (value, filters) => {
     let listData = [];
     switch (value.date()) {
         case 11:
-            listData = [{ type: 'warning', content: 'Tarea Completada' }];
+            if (filters.lejano) {
+                listData = [{ type: 'warning', content: 'Tarea Completada' }];
+            }
             break;
         case 16:
-            listData = [
-                { type: 'error', content: 'Tarea Urgente' }
-            ];
+            if (filters.urgente) {
+                listData = [
+                    { type: 'error', content: 'Tarea Urgente' }
+                ];
+            }
             break;
-
         case 20:
-          listData = [
-              { type: 'success', content: 'Tarea Pendiente' },
-          ];
-          break;
+            if (filters.proximo) {
+                listData = [
+                    { type: 'success', content: 'Tarea Pendiente' },
+                ];
+            }
+            break;
         default:
     }
     return listData;
 };
 
-const dateCellRender = (value) => {
-    const listData = getListData(value);
+const dateCellRender = (value, filters) => {
+    const listData = getListData(value, filters);
     return (
         <ul className="events">
             {listData.map((item) => (
@@ -56,10 +61,10 @@ const dateCellRender = (value) => {
     );
 };
 
-const App = () => {
+const App = ({ filters }) => {
     return (
         <ConfigProvider locale={es_ES}> {/* Aplica la localización en español */}
-            <Calendar  cellRender={(date, info) => (info.type === 'date' ? dateCellRender(date) : info.originNode)} 
+            <Calendar  cellRender={(date, info) => (info.type === 'date' ? dateCellRender(date, filters) : info.originNode)} 
                 headerRender={({ value, onChange }) => {
                     const monthOptions = [];
                     const yearOptions = [];

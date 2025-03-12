@@ -9,15 +9,8 @@ import Divider from '@mui/material/Divider';
 import CustomSwitch from './CustomSwitch';
 import "./Filtros.css";
 
-
-export default function CheckboxListSecondary() {
+export default function CheckboxListSecondary({ filters, setFilters }) {
     const [checked, setChecked] = React.useState([1, 2, 3, 4, 5]);
-    const [switchState, setSwitchState] = React.useState({
-        urgente: true,
-        proximo: true,
-        lejano: true
-    });
-
 
     const values = {
         1: 'DSW',
@@ -43,10 +36,8 @@ export default function CheckboxListSecondary() {
 
     // Maneja cambios en los switches
     const handleSwitchChange = (name) => (event) => {
-        setSwitchState({ ...switchState, [name]: event.target.checked });
+        setFilters({ ...filters, [name]: event.target.checked });
     };
-
-    
 
     return (
         <>
@@ -84,11 +75,7 @@ export default function CheckboxListSecondary() {
                 </ListItemButton>
             </ListItem>
             );
-        }
-        
-        
-
-        )}
+        })}
 
          {/* Separador */}
         <Divider sx={{ margin: '10px 0' }} />
@@ -109,11 +96,9 @@ export default function CheckboxListSecondary() {
                         <ListItemText primary={label} />
                     </ListItemButton>
                     <CustomSwitch
-                        checked={switchState[key]}
+                        checked={filters[key]}
                         onChange={handleSwitchChange(key)}
-                        />
-
-
+                    />
                 </ListItem>
             );
         })}
