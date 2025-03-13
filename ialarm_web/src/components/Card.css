@@ -1,0 +1,27 @@
+.MuiBox-root{
+    width: 50% !important;
+}
+
+.MuiCardMedia-media{
+    width: 50% !important;
+}
+
+.MuiCardContent-root{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.MuiPaper-root:hover .MuiBox-root{
+    background: linear-gradient(45deg,#083D77, #2761A1);
+    transition: background 0.5s ease;
+}
+
+.MuiBox-root{
+    background: linear-gradient(45deg,#2761A1, #083D77);
+    transition: background 0.5s ease !important;
+}
+/* 
+.MuiBox-root:hover{
+    background: linear-gradient(45deg,#083D77, #2761A1);
+} */

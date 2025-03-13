@@ -14,6 +14,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import "./Card.css";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -47,18 +48,19 @@ export default function RecipeReviewCard({ titulo, deadline, description }) {
   };
 
   return (
-    <Card>
-      
+    <Card style={{ width: '100%' }}>
       <CardHeader
         title="Tarea" 
         subheader="Tiempo estimado 2:00 horas"
+        style={{ width: '100%' }}
       />
       <CardMedia
         component="img"
         image="sonido.png"
         alt="sonido"
+        style={{ width: '100%' }}
       />
-      <CardContent>
+      <CardContent style={{ width: '100%' }}>
         <h3>{titulo}</h3>
 
         {deadline === "Completada :D" ? (
