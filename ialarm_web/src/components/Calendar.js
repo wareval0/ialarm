@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Calendar, ConfigProvider, Select, Row, Col, Modal, Button } from 'antd';
 import dayjs from "dayjs";
 import 'dayjs/locale/es'; 
@@ -20,9 +20,20 @@ const getListData = (value, filters, checked, events) => {
 
     // Filtrar eventos según los checkboxes seleccionados
     listData = listData.filter(item => checked.includes(item.materia));
+
+    // Filtrar eventos según los switches
+    if (!filters.urgente) {
+        listData = listData.filter(item => item.type !== 'error');
+    }
+    if (!filters.proximo) {
+        listData = listData.filter(item => item.type !== 'success');
+    }
+    if (!filters.lejano) {
+        listData = listData.filter(item => item.type !== 'warning');
+    }
+
     return listData;
 };
-
 const dateCellRender = (value, filters, checked, showModal, events) => {
     const listData = getListData(value, filters, checked, events);
     return (
