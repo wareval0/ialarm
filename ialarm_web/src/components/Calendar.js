@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar, ConfigProvider, Select, Row, Col, Modal, Button } from 'antd';
 import dayjs from "dayjs";
 import 'dayjs/locale/es'; 
@@ -15,38 +15,16 @@ const eventIcons = {
     error: <ExclamationOutlined style={{ color: 'white' }} />
 };
 
-const getListData = (value, filters, checked) => {
-    let listData = [];
-    switch (value.date()) {
-        case 11:
-            if (filters.lejano) {
-                listData = [{ type: 'warning', content: 'Tarea Completada', titulo: 'Taller de Desarollo de Software', deadline: "Completada :D", description: "Descripción de la tarea lorem ipsum dolor sit amet, consectetur adipiscing elit.", materia:"DSW" }];
-            }
-            break;
-        case 16:
-            if (filters.urgente) {
-                listData = [
-                    { type: 'error', content: 'Tarea Urgente', titulo: 'Proyecto 1 Dalgo', deadline: "12 de Marzo, 11:59 p.m.", description: "Descripción de la tarea lorem ipsum dolor sit amet, consectetur adipiscing elit.", materia:"DALGO" },
-                ];
-            }
-            break;
-        case 20:
-            if (filters.proximo) {
-                listData = [
-                    { type: 'success', content: 'Tarea Pendiente', titulo: 'Proyecto UX', deadline: "12 de Marzo, 11:59 p.m.", description: "Descripción de la tarea lorem ipsum dolor sit amet, consectetur adipiscing elit.", materia:"UX" },
-                ];
-            }
-            break;
-        default:
-    }
+const getListData = (value, filters, checked, events) => {
+    let listData = events.filter(event => dayjs(event.date).isSame(value, 'day'));
 
     // Filtrar eventos según los checkboxes seleccionados
     listData = listData.filter(item => checked.includes(item.materia));
     return listData;
 };
 
-const dateCellRender = (value, filters, checked, showModal) => {
-    const listData = getListData(value, filters, checked);
+const dateCellRender = (value, filters, checked, showModal, events) => {
+    const listData = getListData(value, filters, checked, events);
     return (
         <ul className="events">
             {listData.map((item) => (
@@ -68,6 +46,11 @@ const App = ({ filters, checked }) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [modalContent, setModalContent] = useState({});
     const [modalType, setModalType] = useState('');
+    const [events, setEvents] = useState([
+        { date: dayjs().date(11), type: 'warning', content: 'Tarea Completada', titulo: 'Taller de Desarollo de Software', deadline: "Completada :D", description: "Descripción de la tarea lorem ipsum dolor sit amet, consectetur adipiscing elit.", materia: "DSW" },
+        { date: dayjs().date(16), type: 'error', content: 'Tarea Urgente', titulo: 'Proyecto 1 Dalgo', deadline: "12 de Marzo, 11:59 p.m.", description: "Descripción de la tarea lorem ipsum dolor sit amet, consectetur adipiscing elit.", materia: "DALGO" },
+        { date: dayjs().date(20), type: 'success', content: 'Tarea Pendiente', titulo: 'Proyecto UX', deadline: "12 de Marzo, 11:59 p.m.", description: "Descripción de la tarea lorem ipsum dolor sit amet, consectetur adipiscing elit.", materia: "UX" }
+    ]); // Estado para los eventos
 
     const showModal = (item) => {
         setModalContent(item);
@@ -83,10 +66,17 @@ const App = ({ filters, checked }) => {
         setIsModalVisible(false);
     };
 
+    const handleComplete = () => {
+        setEvents(prevEvents => prevEvents.map(event => 
+            event.titulo === modalContent.titulo ? { ...event, type: 'warning' } : event
+        ));
+        setIsModalVisible(false);
+    };
+
     return (
         <ConfigProvider locale={es_ES}> {/* Aplica la localización en español */}
             <Calendar  
-                cellRender={(date, info) => (info.type === 'date' ? dateCellRender(date, filters, checked, showModal) : info.originNode)} 
+                cellRender={(date, info) => (info.type === 'date' ? dateCellRender(date, filters, checked, showModal, events) : info.originNode)} 
                 headerRender={({ value, onChange }) => {
                     const monthOptions = [];
                     const yearOptions = [];
@@ -143,7 +133,7 @@ const App = ({ filters, checked }) => {
                 onCancel={handleCancel}
                 footer={[
                     modalType !== 'warning' && (
-                        <Button key="complete" type="primary" onClick={handleOk}>
+                        <Button key="complete" type="primary" onClick={handleComplete}>
                             Completado
                         </Button>
                     )
