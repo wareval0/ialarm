@@ -9,9 +9,7 @@ import Divider from '@mui/material/Divider';
 import CustomSwitch from './CustomSwitch';
 import "./Filtros.css";
 
-export default function CheckboxListSecondary({ filters, setFilters }) {
-    const [checked, setChecked] = React.useState([1, 2, 3, 4, 5]);
-
+export default function CheckboxListSecondary({ filters, setFilters, checked, setChecked }) {
     const values = {
         1: 'DSW',
         2: 'DALGO',
@@ -22,11 +20,11 @@ export default function CheckboxListSecondary({ filters, setFilters }) {
 
     // Maneja cambios en los checkboxes
     const handleToggle = (value) => () => {
-        const currentIndex = checked.indexOf(value);
+        const currentIndex = checked.indexOf(values[value]);
         const newChecked = [...checked];
 
         if (currentIndex === -1) {
-            newChecked.push(value);
+            newChecked.push(values[value]);
         } else {
             newChecked.splice(currentIndex, 1);
         }
@@ -57,7 +55,7 @@ export default function CheckboxListSecondary({ filters, setFilters }) {
                 <Checkbox
                     edge="end"
                     onChange={handleToggle(value)}
-                    checked={checked.includes(value)}
+                    checked={checked.includes(values[value])}
                     inputProps={{ 'aria-labelledby': labelId }}
                     sx={{
                         color: '#2E4057', // Color del checkbox cuando no está seleccionado

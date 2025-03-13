@@ -103,3 +103,51 @@
 .ant-picker-calendar-date-today{
     border-color: #2E4057 !important;
 }
+
+.ant-modal-content{
+    padding: 0 !important;
+    border: 1px solid black !important;
+    padding: 1em !important;
+}
+
+.MuiPaper-root{
+    background-image:none !important;
+    max-width: none !important;
+    /* padding: 1em !important; */
+    box-shadow: none !important;
+}
+
+.MuiTypography-h5{
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #2E4057;
+}
+
+.ant-modal-footer{
+    text-align: center !important; 
+}
+
+.ant-modal-footer button{
+    font-family: "Roboto Flex", sans-serif;
+    font-size: 1em;
+    padding: 1em 2em;
+    color: white;
+    border: 1px solid #2E4057;
+    border-radius: 50em;
+    background-color: #2E4057;
+}
+
+.ant-modal-footer button:hover{
+    background-color: #1F2124 !important;
+}
+
+.MuiCardContent-root p{
+    font-family: "Roboto Flex", sans-serif  !important;
+    margin-top: 0;
+}
+
+.MuiCardContent-root h3{
+    font-family: "Roboto Flex", sans-serif  !important;
+    margin-bottom: 0;
+}
