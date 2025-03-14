@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'preview_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -34,6 +35,8 @@ class _FormularioState extends State<Formulario> {
   String? _opcionSeleccionada;
   DateTime? _fechaSeleccionada;
   String? _grupoSeleccionado;
+  final TextEditingController _tituloController = TextEditingController();
+  final TextEditingController _descripcionController = TextEditingController();
   final TextEditingController _diaController = TextEditingController();
   final TextEditingController _mesController = TextEditingController();
   final TextEditingController _anoController = TextEditingController();
@@ -56,6 +59,7 @@ class _FormularioState extends State<Formulario> {
                   const Text('Título',
                       style: TextStyle(fontSize: 24.0, color: Color(0xFF2E4057))),
                   TextFormField(
+                    controller: _tituloController,
                     decoration: const InputDecoration(
                       hintText: 'Título de la tarea',
                       border: OutlineInputBorder(),
@@ -72,6 +76,7 @@ class _FormularioState extends State<Formulario> {
                   const Text('Descripción',
                       style: TextStyle(fontSize: 24.0, color: Color(0xFF2E4057))),
                   TextFormField(
+                    controller: _descripcionController,
                     decoration: const InputDecoration(
                       hintText: 'Escribe una descripción lo más detallada que quieras',
                       border: OutlineInputBorder(),
@@ -403,7 +408,19 @@ class _FormularioState extends State<Formulario> {
                         icon: const Icon(Icons.arrow_forward),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            // Procesar los datos del formulario
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PreviewScreen(
+                                  titulo: _tituloController.text,
+                                  descripcion: _descripcionController.text,
+                                  materia: _materiaSeleccionada!,
+                                  tipoAlarma: _opcionSeleccionada!,
+                                  fechaLimite: _fechaSeleccionada!,
+                                  grupo: _grupoSeleccionado!,
+                                ),
+                              ),
+                            );
                           }
                         },
                       ),
