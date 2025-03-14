@@ -1,0 +1,2 @@
+C:/Users/baldi/OneDrive/Documentos/AplicacionUX/ialarm/ialarm_mobile/android/app/.cxx/Debug/655u4f4z/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/baldi/OneDrive/Documentos/AplicacionUX/ialarm/ialarm_mobile/android/app/.cxx/Debug/655u4f4z/arm64-v8a/CMakeFiles/rebuild_cache.dir
