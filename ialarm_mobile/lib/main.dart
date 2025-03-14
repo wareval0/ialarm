@@ -37,6 +37,7 @@ class _FormularioState extends State<Formulario> {
   final TextEditingController _diaController = TextEditingController();
   final TextEditingController _mesController = TextEditingController();
   final TextEditingController _anoController = TextEditingController();
+  bool _isRecording = false;
 
   @override
   Widget build(BuildContext context) {
@@ -330,16 +331,51 @@ class _FormularioState extends State<Formulario> {
 
             const SizedBox(height: 16.0),
             Align(
-              alignment: Alignment.bottomRight,
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward),
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    // Procesar los datos del formulario
-                  }
-                },
+              alignment: Alignment.bottomCenter,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Expanded(child: Container()), // Espacio flexible a la izquierda
+                  GestureDetector(
+                    onTapDown: (_) {
+                      setState(() {
+                        _isRecording = true;
+                      });
+                    },
+                    onTapUp: (_) {
+                      setState(() {
+                        _isRecording = false;
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: _isRecording ? const Color(0xFFEF2D56) : const Color(0xFF2E4057),
+                        shape: BoxShape.circle,
+                      ),
+                      padding: const EdgeInsets.all(16.0),
+                      child: Icon(
+                        _isRecording ? Icons.stop : Icons.mic,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: IconButton(
+                        icon: const Icon(Icons.arrow_forward),
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            // Procesar los datos del formulario
+                          }
+                        },
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
+
           ],
         ),
       ),
