@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import { LogIn } from './components/LogIn';
 import { useLoginStore } from './hooks/useLoginStore';
 import { PasswordRecovery } from './components/PasswordRecovery';
+import { Stimators } from './components/Stimators';
 
 const App = () => {
   const { loggedOn } = useLoginStore();
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/home" element={<Inicio />} />
           <Route path="/calendario" element={<PageCalendar />} />
           <Route path="/password_recovery" element={<PasswordRecovery />} />
+          <Route path="/stimators" element={<Stimators />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -4,8 +4,8 @@ import dayjs from "dayjs";
 import 'dayjs/locale/es'; 
 import { CheckOutlined, EditOutlined, ExclamationOutlined } from '@ant-design/icons'; // Importa íconos
 import "./Calendar.css";
-import es_ES from 'antd/es/locale/es_ES'; // Importa la localización en español
-import RecipeReviewCard from './Card'; // Importa el componente Card
+import es_ES from 'antd/es/locale/es_ES';
+import RecipeReviewCard from './Card';
 
 dayjs.locale("es"); 
 

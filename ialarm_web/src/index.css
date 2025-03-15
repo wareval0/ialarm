@@ -69,6 +69,7 @@ p.body-s {
     font-weight: 400 !important;
     line-height: var(--Body-Small-Line-Height, 20px) !important;
     letter-spacing: var(--Body-Small-Tracking, 0.1px) !important;
+    text-align: justify !important;
 }
 
 div.d-flex {
@@ -127,4 +128,20 @@ div.w-100 {
 
 .solid-secondary:hover {
     background-color: #1F2124 !important;
+}
+
+.outline-primary {
+    font-family: "Roboto Flex", sans-serif !important;
+    font-size: 1em !important;
+    padding: 1em 2em !important;
+    color: #083D77 !important;
+    border: 1px solid #083D77 !important;
+    border-radius: 50em !important;
+    background-color: white !important;
+    width: 150px !important;
+}
+
+.outline-primary:hover {
+    background-color: #083D77 !important;
+    color: white !important;
 }

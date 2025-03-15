@@ -4,7 +4,6 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
-import Switch from '@mui/material/Switch';
 import Divider from '@mui/material/Divider';
 import CustomSwitch from './CustomSwitch';
 import "./Filtros.css";

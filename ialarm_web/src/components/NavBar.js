@@ -26,7 +26,7 @@ function NavBar() {
                     <Link href="/calendario" sx={{ color: '#FFFFFF', mr: 2, '&:hover': { color: '#EF2D56' } }}>
                         Calendario
                     </Link>
-                    <Link href="#" sx={{ color: '#FFFFFF', '&:hover': { color: '#EF2D56' } }}>
+                    <Link href="stimators" sx={{ color: '#FFFFFF', '&:hover': { color: '#EF2D56' } }}>
                         Estimadores
                     </Link>
                 <Box />

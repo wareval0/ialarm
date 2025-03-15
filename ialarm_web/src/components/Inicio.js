@@ -20,7 +20,9 @@ function Inicio() {
             </Link>
           </Col>
           <Col xs={24} sm={12} md={12} lg={12}>
-            <CardInicio title="Estimadores" image="EstimadoresImg.png" description="Escoge el estimador que más se adapte a ti, para obtener más precisión y nunca más se te pase una tarea"/>
+            <Link to="/stimators">
+              <CardInicio title="Estimadores" image="EstimadoresImg.png" description="Escoge el estimador que más se adapte a ti, para obtener más precisión y nunca más se te pase una tarea"/>
+            </Link>
           </Col>
           <Col xs={24} sm={12} md={12} lg={12}>
             <CardInicio title="Perfil" image="PerfilImg.png" description="Visualiza tu perfil y conoce tus estadícticas"/>
