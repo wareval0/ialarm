@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col } from "antd";
 import CardInicio from "./CardInicio";
+import { Link } from "react-router-dom";
 
 function Inicio() {
   return (
@@ -14,7 +15,9 @@ function Inicio() {
       <div style={{ display: 'flex', justifyContent: 'center', width: '100%', padding: '1em 3em' }}>
         <Row gutter={[30, 30]} justify="center" style={{ width: '100%' }}>
           <Col xs={24} sm={12} md={12} lg={12}>
+            <Link to="/calendario">
             <CardInicio title="Calendario" image="Media.png" description="Visualiza tus tareas de una forma fácil y sencilla" />
+            </Link>
           </Col>
           <Col xs={24} sm={12} md={12} lg={12}>
             <CardInicio title="Estimadores" image="EstimadoresImg.png" description="Escoge el estimador que más se adapte a ti, para obtener más precisión y nunca más se te pase una tarea"/>
