@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'preview_screen.dart';
+import 'loading_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -411,7 +411,7 @@ class _FormularioState extends State<Formulario> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => PreviewScreen(
+                                builder: (context) => LoadingScreen(
                                   titulo: _tituloController.text,
                                   descripcion: _descripcionController.text,
                                   materia: _materiaSeleccionada!,
@@ -429,7 +429,6 @@ class _FormularioState extends State<Formulario> {
                 ),
               ],
             ),
-
           ],
         ),
       ),
