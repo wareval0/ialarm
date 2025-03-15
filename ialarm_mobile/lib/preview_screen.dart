@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'success_screen.dart'; // Importa la nueva pantalla
 
 class PreviewScreen extends StatelessWidget {
   final String titulo;
@@ -113,7 +114,10 @@ class PreviewScreen extends StatelessWidget {
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
-                      // Navegar a la siguiente pantalla
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SuccessScreen()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF083D77),
