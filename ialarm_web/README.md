@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# IAlarm Web
+UX - Mejoramiento de la Experiencia de Usuario
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Wilmer Arévalo - 202214720
+- Juan Pablo Baldión - 202214765
 
-## Available Scripts
 
-In the project directory, you can run:
+Universidad de Los Andes
+2025
 
-### `npm start`
+## Descripción del proyecto
+IAlarm es un proyecto diseñado para estudiantes de la Universidad de los Andes con dificultades para estimar el tiempo necesario para completar sus tareas. Utilizando modelos de machine learning, se calcula el tiempo necesario para cada actividad, ayudando a los estudiantes a mejorar su rendimiento académico al planificar mejor sus tiempos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Para esto, se ha dispuesto de una aplicación móvil y una aplicación web. Desde la aplicación móvil se pueden crear y consultar tareas, y desde la apicación web se pueden gestionar aspectos más tecnicos como la configuración de la cuenta, el modelo de estimación, entre otras cosas.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalación
+### Prerequisitos
 
-### `npm test`
+Antes de ejecutar el proyecto, asegúrate de tener instalados los siguientes programas:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Git](https://git-scm.com/) para gestionar el código fuente.
+- [Node.js](https://nodejs.org/) y [npm](https://www.npmjs.com/) para gestionar las dependencias y ejecutar el proyecto.
 
-### `npm run build`
+### Cómo correr el proyecto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Sigue estos pasos para ejecutar el proyecto en tu máquina local:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### 1. Clonar el repositorio
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Primero, clona este repositorio usando Git. Abre tu terminal y ejecuta el siguiente comando:
 
-### `npm run eject`
+```bash
+git clone https://github.com/wareval0/ialarm.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### 2. Instalar dependencias
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Accede al directorio del proyecto:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+cd ialarm/ialarm_web
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Luego, instala las dependencias necesarias utilizando npm:
 
-## Learn More
+```bash
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### 3. Ejecutar el proyecto
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Una vez que las dependencias estén instaladas, ejecuta el siguiente comando para iniciar el servidor de desarrollo:
 
-### Code Splitting
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Esto abrirá el proyecto en tu navegador por defecto en la dirección `http://localhost:3000`.
 
-### Analyzing the Bundle Size
+### Más documentación técnica
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Para más detalles sobre React y cómo funciona, consulta la documentación oficial de React:
 
-### Making a Progressive Web App
+- [React - Documentación Oficial](https://reactjs.org/docs/getting-started.html)
+- [React - Guía de Inicio](https://reactjs.org/tutorial/tutorial.html)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Si necesitas más detalles sobre npm, puedes consultar la siguiente documentación:
 
-### Advanced Configuration
+- [npm - Documentación Oficial](https://docs.npmjs.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Algunas Screenshots del proyecto
+### Aplicación Web
+![web-1](https://github.com/user-attachments/assets/1f488a5f-27d1-4c04-bdc1-73ebb419a8a3)
+![web-2](https://github.com/user-attachments/assets/343fb62f-400a-4aea-b966-29852347186f)
+![web-3](https://github.com/user-attachments/assets/0ffa8a50-fae4-4173-be99-71d8a1abeffd)
+![web-4](https://github.com/user-attachments/assets/87b38032-19b7-4289-88a0-14e1c1be1bd6)
+![web-5](https://github.com/user-attachments/assets/b5b3a891-376d-45e7-aa2c-c94a62021719)
