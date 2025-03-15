@@ -7,5 +7,124 @@ body{
 
 *{
     font-family: 'Roboto Flex', sans-serif !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
+}
+
+h1.title-l {
+    color: #2E4057 !important;
+    font-family: 'Roboto Flex', sans-serif !important;
+    font-size: 96px !important;
+    font-style: normal !important;
+    font-weight: 700;
+    line-height: var(--Label-Large-Line-Height, 20px) !important;
+    letter-spacing: var(--Label-Large-Tracking, 0.1px) !important;
+}
+
+h2.title-m {
+    color: #2E4057 !important;
+    font-family: 'Roboto Flex', sans-serif !important;
+    font-size: 68px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: var(--Label-Medium-Line-Height, 20px) !important;
+    letter-spacing: var(--Label-Medium-Tracking, 0.1px) !important;
+}
+
+h3.title-s {
+    color: #2E4057 !important;
+    font-family: 'Roboto Flex', sans-serif !important;
+    font-size: 48px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: var(--Label-Small-Line-Height, 20px) !important;
+    letter-spacing: var(--Label-Small-Tracking, 0.1px) !important;
+}
+
+p.body-l {
+    color: #2E4057 !important;
+    font-family: 'Roboto Flex', sans-serif !important;
+    font-size: 32px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: var(--Body-Large-Line-Height, 20px) !important;
+    letter-spacing: var(--Body-Large-Tracking, 0.1px) !important;
+}
+
+p.body-m {
+    color: #2E4057 !important;
+    font-family: 'Roboto Flex', sans-serif !important;
+    font-size: 24px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    text-align: justify !important;
+    line-height: var(--Body-Medium-Line-Height, 20px) !important;
+    letter-spacing: var(--Body-Medium-Tracking, 0.1px) !important;
+}
+
+p.body-s {
+    color: #2E4057 !important;
+    font-family: 'Roboto Flex', sans-serif !important;
+    font-size: 20px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: var(--Body-Small-Line-Height, 20px) !important;
+    letter-spacing: var(--Body-Small-Tracking, 0.1px) !important;
+}
+
+div.d-flex {
+    display: flex !important;
+}
+
+div.flex-column {
+    flex-direction: column !important;
+}
+
+div.flex-row {
+    flex-direction: row !important;
+}
+
+div.justify-content-center {
+    justify-content: center !important;
+}
+
+div.justify-content-between {
+    justify-content: space-between !important;
+}
+
+div.align-items-center {
+    align-items: center !important;
+}
+
+div.w-100 {
+    width: 100% !important;
+}
+
+.solid-primary {
+    font-family: "Roboto Flex", sans-serif !important;
+    font-size: 1em !important;
+    padding: 1em 2em !important;
+    color: white !important;
+    border: 1px solid #083D77 !important;
+    border-radius: 50em !important;
+    background-color: #083D77 !important;
+    width: 150px !important;
+}
+
+.solid-primary:hover {
+    background-color: #062A5A !important;
+}
+
+.solid-secondary {
+    font-family: "Roboto Flex", sans-serif !important;
+    font-size: 1em !important;
+    padding: 1em 2em !important;
+    color: white !important;
+    border: 1px solid #2E4057 !important;
+    border-radius: 50em !important;
+    background-color: #2E4057 !important;
+    width: 150px !important;
+}
+
+.solid-secondary:hover {
+    background-color: #1F2124 !important;
 }
